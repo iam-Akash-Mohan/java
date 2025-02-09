@@ -2,6 +2,7 @@ package com.akash.java;
 
 import com.akash.java.generics.d_practcail_use_case.constants.HistoricDataType;
 import com.akash.java.generics.d_practcail_use_case.historicdata.dto.BaseHistoricDataDTO;
+import com.akash.java.generics.d_practcail_use_case.historicdata.dto.DocumentHistoricDataDTO;
 import com.akash.java.generics.d_practcail_use_case.historicdata.factory.HistoricDataServiceFactory;
 import com.akash.java.generics.d_practcail_use_case.historicdata.service.HistoricDataService;
 import org.junit.jupiter.api.Test;
@@ -19,9 +20,11 @@ class HistoricDataTest {
 
     @Test
     void test(){
-        HistoricDataService<BaseHistoricDataDTO<?>> historicDataService =
-                historicDataServiceFactory.getHistoricDataService(HistoricDataType.DOCUMENT);
-        historicDataService.save(null);
+        //correct way to call
+        HistoricDataService<DocumentHistoricDataDTO> historicDataService = historicDataServiceFactory.
+                <DocumentHistoricDataDTO>getHistoricDataService(HistoricDataType.DOCUMENT);
+
+        //Do not call like this
         HistoricDataService<BaseHistoricDataDTO<?>> historicDataService1 =
                 historicDataServiceFactory.getHistoricDataService(HistoricDataType.ATTACHMENT);
         historicDataService1.save(null);
