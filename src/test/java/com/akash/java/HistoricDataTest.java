@@ -12,13 +12,13 @@ import org.springframework.boot.test.context.SpringBootTest;
  * @author Akash M
  */
 @SpringBootTest
-public class HistoricDataTest {
+class HistoricDataTest {
 
     @Autowired
     private HistoricDataServiceFactory historicDataServiceFactory;
 
     @Test
-    public void test(){
+    void test(){
         HistoricDataService<BaseHistoricDataDTO<?>> historicDataService =
                 historicDataServiceFactory.getHistoricDataService(HistoricDataType.DOCUMENT);
         historicDataService.save(null);
