@@ -25,11 +25,11 @@ class HistoricDataServiceFactoryImpl implements HistoricDataServiceFactory {
                 .collect(Collectors.toMap(HistoricDataService::getType, Function.identity()));
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public <T extends BaseHistoricDataDTO<?>> HistoricDataService<T> getHistoricDataService(
         HistoricDataType historicDataType
     ) {
-//      TODO:ak avoid type casting
         return (HistoricDataService<T>) historicDataServiceMap.get(historicDataType);
     }
 }
