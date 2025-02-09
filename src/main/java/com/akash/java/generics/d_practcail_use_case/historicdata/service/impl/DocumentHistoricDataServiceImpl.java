@@ -5,6 +5,8 @@ import com.akash.java.generics.d_practcail_use_case.historicdata.dto.DocumentHis
 import com.akash.java.generics.d_practcail_use_case.historicdata.service.HistoricDataService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author Akash M
  */
@@ -12,6 +14,11 @@ import org.springframework.stereotype.Service;
 class DocumentHistoricDataService implements HistoricDataService<DocumentHistoricDataDTO> {
     @Override
     public DocumentHistoricDataDTO save(DocumentHistoricDataDTO dto) {
+        return null;
+    }
+
+    @Override
+    public List<DocumentHistoricDataDTO> saveAll(List<DocumentHistoricDataDTO> dtos) {
         return null;
     }
 

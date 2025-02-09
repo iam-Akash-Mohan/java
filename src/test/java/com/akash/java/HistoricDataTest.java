@@ -9,6 +9,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.util.List;
+
 /**
  * @author Akash M
  */
@@ -24,7 +26,10 @@ class HistoricDataTest {
         HistoricDataService<DocumentHistoricDataDTO> historicDataService = historicDataServiceFactory.
                 <DocumentHistoricDataDTO>getHistoricDataService(HistoricDataType.DOCUMENT);
 
-        historicDataService.save(null);
+        historicDataService.save(new DocumentHistoricDataDTO());
+        List<DocumentHistoricDataDTO> documentHistoricDataDTOS = historicDataService
+                .saveAll(List.of(new DocumentHistoricDataDTO()));
+
         //Do not call like this
         HistoricDataService<BaseHistoricDataDTO<?>> historicDataService1 =
                 historicDataServiceFactory.getHistoricDataService(HistoricDataType.ATTACHMENT);

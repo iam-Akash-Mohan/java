@@ -5,6 +5,8 @@ import com.akash.java.generics.d_practcail_use_case.historicdata.dto.AttachmentH
 import com.akash.java.generics.d_practcail_use_case.historicdata.service.HistoricDataService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author Akash M
  */
@@ -13,6 +15,11 @@ class AttachmentHistoricDataService implements HistoricDataService<AttachmentHis
 
     @Override
     public AttachmentHistoricDataDTO save(AttachmentHistoricDataDTO dto) {
+        return null;
+    }
+
+    @Override
+    public List<AttachmentHistoricDataDTO> saveAll(List<AttachmentHistoricDataDTO> dtos) {
         return null;
     }
 
