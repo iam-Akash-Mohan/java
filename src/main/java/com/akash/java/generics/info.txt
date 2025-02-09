@@ -1,0 +1,60 @@
+Generics in java is used to create a type safe interfaces, classes and methods.
+
+Define the class once and use it with different data types
+Ref a
+
+Why not Object can be used ?
+    1. Explicit casting is required
+        Generics is used to avoid casting. Eg
+            Object objList = new ArrayList<>();
+            List<Integer> intList = ((ArrayList<Integer>) objList)
+
+    2. type mismatch
+            Object str = "aaa";
+            Object integer = 1;
+            str = integer  // syntactically correct but can lead to run time exception
+
+    Hence compile time exception can be shown rather runtime exception.
+
+class Person<T> // here T is called as type parameter. Hence generics are parameterised
+
+Bounded type:
+        Any class can be passes as T in above example. Sometimes it is essential to restrict the type of
+class that can be passes as parameter. While declaring the parameter declare the upperbound ( super class)
+which all type arguments must be derived
+    <T extends superclass>
+    <T extends interface_name>
+    <T extends class_name & interface_name1>
+    <T extends interface_name1 & interface_name2>
+
+    class name should come before interface name
+Ref b
+
+Wildcard pattern
+? is called wildcard. It represents unknown type.Wildcards are used only on the methods.
+It is not used at class level.
+    List<?> sort( List<?> unsorted)
+bounded
+    List<?> sort(List<? extends Number> unsorted)
+    List<? extends Number> sort(List<? extends Number> unsorted)
+
+Why primitive types cannot be used in generics ?
+    While compilation T will be erased and replaced with the Object. Since primitive type dont extend
+object it is impossible to use primitives in generics.
+
+Raw type
+    Since generics are introduced in java 5, it should be compatible with previous version of java.
+Here comes erasure. While compilation java replaces the generics type ( T ) with Object if no upperbound
+is specified or with upperbound class.
+
+class hierarchy
+    Generics can be a part of class hierarchy. Similar to how parameters are passed from sub class to
+    super class in constructor, the types are passed here.
+      Eg. Subclass<T> extends SuperClass<T>
+
+* If Iam using generics and still use casting ( which I usually do ) then I am making a mistake
+* Never use a raw type. If I am in a situation where using raw type is the only way to make the code
+compile, then I did something wrong. Using raw type is as same as using Object.
+* Wildcards are only allowed to be used in method declaration and not in class declaration
+
+https://github.com/NewmanAdesan/Generics-Concept-in-JAVA
