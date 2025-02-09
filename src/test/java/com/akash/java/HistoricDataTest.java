@@ -24,6 +24,7 @@ class HistoricDataTest {
         HistoricDataService<DocumentHistoricDataDTO> historicDataService = historicDataServiceFactory.
                 <DocumentHistoricDataDTO>getHistoricDataService(HistoricDataType.DOCUMENT);
 
+        historicDataService.save(null);
         //Do not call like this
         HistoricDataService<BaseHistoricDataDTO<?>> historicDataService1 =
                 historicDataServiceFactory.getHistoricDataService(HistoricDataType.ATTACHMENT);
