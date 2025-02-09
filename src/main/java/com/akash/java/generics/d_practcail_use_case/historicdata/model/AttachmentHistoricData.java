@@ -1,4 +1,4 @@
-package com.akash.java.generics.d_practcail_use_case.historicdata;
+package com.akash.java.generics.d_practcail_use_case.historicdata.model;
 
 import com.akash.java.generics.d_practcail_use_case.snapshots.AttachmentSnapshotDTO;
 
